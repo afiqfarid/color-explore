@@ -30,14 +30,20 @@ function generateColors(){
         colorContainerEl.style.background = "linear-gradient(45deg, #" + newColorCode + ", #" + newColorCode2 + ")";
 
         const colorLabel = document.createElement("span");
-
         colorLabel.classList.add("color-label");
-
         colorContainerEl.appendChild(colorLabel);
+        
+        const colorCopy = document.createElement("span");
+        colorCopy.classList.add("color-copy");
+        colorContainerEl.appendChild(colorCopy);
 
         colorLabel.innerText = "#" + newColorCode + ", #" + newColorCode2;
-        // colorLabel.innerText = "Copy 👆";
-        // colorLabel.innerHTML = "<i class='bx bxs-copy' ></i>";
+        // colorCopy.innerText = "Copy 👆";
+        colorCopy.innerHTML = "<i class='bx bx-copy' ></i>";
+
+        colorContainerEl.addEventListener('click', () => {
+            navigator.clipboard.writeText("#" + newColorCode + ", #" + newColorCode2);
+        });
     })
 }
 
@@ -52,3 +58,9 @@ function randomColor() {
     }
     return colorCode;
 }
+
+const scrambleBtn = document.getElementById("scrambleBtn")
+
+scrambleBtn.addEventListener('click', () => {
+    window.location.reload();
+})

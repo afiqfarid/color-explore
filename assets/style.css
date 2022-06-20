@@ -30,22 +30,82 @@ body {
 header {
     height: 4rem;
     border-bottom: 1px solid #f0f0f0;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 6%);
     padding: var(--margin);
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
 }
 
-section {
+nav {
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_logo {
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    font-size: 24px;
+    color: #404040;
+}
+
+.nav_logo svg {
+    width: 70px;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: .8rem 1rem;
+    font-weight: 600;
+    font-size: 16px;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+    cursor: pointer;
+    background-color: #404040;
+    border-radius: 1.5rem;
+}
+
+button i {
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: #4d4c4c;
+}
+
+.popup_msg {
+    display: flex;
+    justify-content: center;
+}
+
+.popup_msg span {
+    background-color: #83FA33;
+    padding: .5rem 1rem;
+}
+
+.hero {
     /* padding: 1.5rem 0;
     margin: 2rem 1.5rem; */
     margin: 4rem 1.5rem 3.5rem;
 }
 
-section h1 {
+.hero h1 {
     font-size: var(--biggest-font-size);
     letter-spacing: -1px;
     margin-bottom: .5rem;
+    color: #404040;
 }
 
-section span {
+.hero span {
     font-size: 1.1rem;
 }
 
@@ -68,8 +128,8 @@ main {
     height: 200px;
     margin: .5rem;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
     border-radius: .8rem;
     text-align: center;
     overflow: hidden;
@@ -83,8 +143,8 @@ main {
 .color-label {
     position: absolute;
     transition: .4s;
+    right: 0;
     bottom: -4rem;
-    /* visibility: hidden; */
     background: rgba(255,255,255,0.2);
     padding: 5px 10px;
     color: #fff;
@@ -94,12 +154,35 @@ main {
 }
 
 .color-box:hover .color-label {
-    /* visibility: visible; */
     bottom: 0;
 }
 
+.color-copy {
+    font-size: 18px;
+    border-radius: 50%;
+    /* background: rgba(255,255,255,0.2); */
+    color: #fff;
+    /* padding: 5px 10px; */
+    /* visibility: hidden; */
+    transition: .3s;
+    transform: scale(0) translateY(-10%);
+}
+
+.color-box:hover .color-copy {
+    /* visibility: visible; */
+    transform: scale(1) translateY(0);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+    padding: 1rem;
+}
+
 @media screen and (min-width: 576px) {
-    section {
+    .hero {
         text-align: center;
     }
 
