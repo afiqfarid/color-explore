@@ -1,17 +1,11 @@
 const containerEl = document.querySelector(".container")
 
-for (let index = 0; index < 30; index++) {
+for (let index = 0; index < 28; index++) {
     const colorContainerEl = document.createElement("div");
     
     colorContainerEl.classList.add("color-box");
 
     containerEl.appendChild(colorContainerEl);
-
-    /* const colorLabel = document.createElement("span");
-
-    colorLabel.classList.add("color-label");
-
-    colorContainerEl.appendChild(colorLabel); */
 
 }
 
@@ -19,9 +13,9 @@ const colorContainerElAll = document.querySelectorAll(".color-box");
 
 const colorLabelAll = document.querySelectorAll(".color-box span");
 
-// console.log(colorContainerElAll);
+const popupMsg = document.getElementById("popup-msg");
 
-generateColors(); 
+generateColors();
 
 function generateColors(){
     colorContainerElAll.forEach((colorContainerEl)=>{
@@ -43,7 +37,16 @@ function generateColors(){
 
         colorContainerEl.addEventListener('click', () => {
             navigator.clipboard.writeText("#" + newColorCode + ", #" + newColorCode2);
-        });
+
+            popupMsg.classList.add("show_popup");
+            
+            setTimeout(function(){
+                if (popupMsg.classList.contains("show_popup")) {
+                    popupMsg.classList.remove("show_popup");
+                }
+            }, 2000);
+
+        });       
     })
 }
 
