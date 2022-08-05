@@ -39,7 +39,8 @@ header {
     width: 100%;
     top: 0%;
     z-index: 1;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: saturate(180%) blur(20px);
 }
 
 nav {
@@ -148,7 +149,7 @@ main {
 
 .color-box {
     background-color: #404eed;
-    width: 100%;
+    width: 46%;
     /* width: 200px; */
     height: 180px;
     margin: .4rem;
